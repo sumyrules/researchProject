@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+<title>Cloud Recommendation tool</title>
+<link href="./css/styles.css" rel="stylesheet" type="text/css"/> 
+</h:head>
+<h:body>
+<h1 class="title">Cloud Recommendation tool</h1>
+<p>
+<b>Select recommendation type.<br></br>
+If you want only price to be considered for recommendation select Price Recommendation<br></br>
+For recommendation based on type of Recommendation select Application Recommendation
+</b>
+
+</p>
+<div align="center">
+<fieldset>
+<legend>Select Recommendation type</legend>
+<h:form>
+  <!-- Calls "someOtherActionControllerMethod" and uses return value as base name of page to navigate to. -->
+  <h:commandButton value="Price based Recommendation"
+                   action="pricing_recomendation?faces-redirect=true"/>
+  <h:outputText value="&#160;" />
+  <h:outputText value="&#160;" />
+  <h:outputText value="&#160;" />
+  <h:outputText value="&#160;" />
+  <h:commandButton right="5" value="Application based Recommendation"
+                   action="application_recomendation?faces-redirect=true"/>          
+</h:form>
+</fieldset>
+<br/>
+</div></h:body></html>

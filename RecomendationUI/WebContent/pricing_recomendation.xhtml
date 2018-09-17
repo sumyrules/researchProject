@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+<!--  When you make your own projects, copy and rename sample-file-with-form.xhtml  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      or sample-file-no-form.xhtml. Don't copy and rename THIS file, because
+      this file has too many extraneous things in it. -->
+<h:head>
+<title>Cloud Recommendation tool</title>
+<link href="./css/styles.css" rel="stylesheet" type="text/css"/> 
+</h:head>
+<h:body>
+<h1 class="title">Cloud Recommendation tool</h1>
+<p>
+</p>
+<div align="center">
+<fieldset>
+<!-- <legend></legend> -->
+<h:form>
+  Maximum price in dollars per Year : <h:inputText value="#{backingBean.priceLimit}"/> 
+  <h:selectBooleanCheckbox value="#{backingBean.ishighPerformance}" /> high performance
+  <!-- Calls "someActionControllerMethod" and uses return value as base name of page to navigate to. -->
+  <h:commandButton value="Get Recommendations" 
+                   action="#{backingBean.getCloudRecommendations}"/>     
+</h:form>
+</fieldset>
+<div align="left">
+<table  border="1">
+    <tbody>
+	 <tr>
+		        <th style="max-width: 150px;">Service 1 (Java)</th>
+            	<ui:repeat value="#{backingBean.data}" var="Data">
+                <td>
+                    <h:outputText value="#{Data.serviceData1.instanceCode}"></h:outputText>
+                </td>
+            </ui:repeat>
+        </tr>
+         <tr>
+		        <th style="max-width: 150px;">Service 2 (MySql)</th>
+            	<ui:repeat value="#{backingBean.data}" var="Data">
+                <td>
+                    <h:outputText value="#{Data.serviceData2.instanceCode}"></h:outputText>
+                </td>
+            </ui:repeat>
+        </tr>
+        <tr>
+		        <th style="max-width: 150px;">Price</th>
+            	<ui:repeat value="#{backingBean.data}" var="Data">
+                <td>
+                    <h:outputText value="#{Data.price}"></h:outputText>
+                </td>
+            </ui:repeat>
+        </tr>
+    </tbody>
+</table>
+</div>
+<h3>Recommendation</h3>
+
+<div align="center">
+<table border="1">
+<thead>
+</thead>
+<tbody>
+
+<tr>
+<th>Service 1 (Java)</th>
+<td>
+ <h:outputText value="#{backingBean.recomendedService.serviceData1.instanceCode}"></h:outputText>
+</td>
+</tr>
+<tr>
+<th>Service 2 (MySql)</th>
+<td>
+ <h:outputText value="#{backingBean.recomendedService.serviceData2.instanceCode}"></h:outputText>
+</td>
+</tr>
+<tr>
+<th>price</th>
+<td>
+ <h:outputText value="#{backingBean.recomendedService.price}"></h:outputText>
+</td>
+</tr>
+
+</tbody>
+</table>
+
+
+
+</div>
+</div>
+
+
+
+
+</h:body></html>
